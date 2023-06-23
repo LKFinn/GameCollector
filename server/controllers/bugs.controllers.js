@@ -1,9 +1,9 @@
 const bugModel = require("../models/bug");
 
-// Controller function to find bugs based on a filter
+
 const findBugs = async (req, res) => {
   try {
-    const filter = req.query; // Example: { type: 'Bug' }
+    const filter = req.query; 
     const bugs = await bugModel.findBugs(filter);
     res.json(bugs);
   } catch (error) {
@@ -11,7 +11,7 @@ const findBugs = async (req, res) => {
   }
 };
 
-// Controller function to find a bug by name
+
 const findBugByName = async (req, res) => {
   try {
     const { name } = req.params;
@@ -25,7 +25,7 @@ const findBugByName = async (req, res) => {
 const findManyBugsByName = async (req, res) => {
   try {
     const { names } = req.body;
-    const bugs = await bugModel.findManyBugsByName(names); // Pass the array directly
+    const bugs = await bugModel.findManyBugsByName(names); 
     res.json(bugs);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
@@ -42,7 +42,7 @@ const findBugsByLocation = async (req, res) => {
   }
 };
 
-// Controller function to find bugs by time and month
+
 const findBugsDateAndTime = async (req, res) => {
   try {
     const filter = {
